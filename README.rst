@@ -19,7 +19,11 @@ Download the latest stable build via this button:
 
 Official mirror is `here <https://github.com/guysoft/OctoPi/releases>`_
 
-Nightly builds are available `here <http://gnethomelinux.com/OctoPi/nightly/>`_
+Second mirror is `here <https://octopi.gnethomelinux.com/Distros/OctoPi/>`_
+
+Nightly builds are available `here <http://unofficialpi.org/Distros/OctoPi/nightly/>`_
+
+64bit Nightly builds are available `here <http://unofficialpi.org/Distros/OctoPi/nightly-arm64/>`_
 
 How to use it?
 --------------
@@ -43,7 +47,6 @@ To install plugins from the commandline instead of OctoPrint's built-in plugin m
 
 If a USB webcam or the Raspberry Pi camera is detected, MJPG-streamer will be started automatically as webcam server. OctoPrint on OctoPi ships with correctly configured stream and snapshot URLs pointing at it. If necessary, you can reach it under `http://octopi.local/webcam/?action=stream <http://octopi.local/webcam/?action=stream>`_ and SSL respectively, or directly on its configured port 8080: `http://octopi.local:8080/?action=stream <octopi.local:8080/?action=stream>`_.
 
-CuraEngine is installed and OctoPrint ships pre-configured with the correct path to utilize it for on-board-slicing. Just import a Cura Slicing Profile in OctoPrint's settings and start slicing directly on your Pi.
 
 Features
 --------
@@ -51,7 +54,6 @@ Features
 * `OctoPrint <http://octoprint.org>`_ host software for 3d printers out of the box
 * `Raspbian <http://www.raspbian.org/>`_ tweaked for maximum performance for printing out of the box
 * `mjpg-streamer with RaspiCam support <https://github.com/jacksonliam/mjpg-streamer>`_ for live viewing of prints and timelapse video creation.
-* `CuraEngine <https://github.com/Ultimaker/CuraEngine>`_ pre-installed for slicing directly on the Raspberry Pi
 
 Developing
 ----------
