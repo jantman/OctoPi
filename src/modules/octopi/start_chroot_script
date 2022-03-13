@@ -11,7 +11,7 @@ export LC_ALL=C
 
 source /common.sh
 
-if [ -n "$OCTOPI_APTMIRROR" ]; 
+if [ -n "$OCTOPI_APTMIRROR" ];
 then
     echo "Switching apt mirror in /etc/apt/sources.list to $OCTOPI_APTMIRROR"
     cp /etc/apt/sources.list /etc/apt/sources.list.backup
@@ -66,14 +66,14 @@ pushd /home/"${BASE_USER}"
         apt-get -y --force-yes install libjpeg8-dev
       fi
     fi
-    
+
     apt-get -y --force-yes --no-install-recommends install imagemagick ffmpeg libv4l-dev
 
     wget $OCTOPI_MJPGSTREAMER_ARCHIVE -O mjpg-streamer.zip
     unzip mjpg-streamer.zip
     rm mjpg-streamer.zip
 
-    pushd mjpg-streamer-master/mjpg-streamer-experimental
+    pushd mjpg-streamer-raspicam-awb/mjpg-streamer-experimental
       # As said in Makefile, it is just a wrapper around CMake.
       # To apply -j option, we have to unwrap it.
       build_dir=_build
@@ -124,7 +124,7 @@ EOT
     useradd ${WEBCAM_USER}
     usermod -aG video ${WEBCAM_USER}
   fi
-  
+
   #CuraEngine
   if [ "$OCTOPI_INCLUDE_CURAENGINE" == "yes" ]
   then
@@ -151,7 +151,7 @@ EOT
 
   # fetch current yq build and install to /usr/local/bin
   wget -O yq $OCTOPI_YQ_DOWNLOAD && chmod +x yq && mv yq /usr/local/bin
-  
+
 popd
 
 #Make sure user pi / ${BASE_USER} has access to serial ports
@@ -197,13 +197,13 @@ do
 done
 
 for ip in $(hostname -I);
-do 
+do
     echo "    http://$ip"
 done
 
 echo
 echo "https is also available, with a self-signed certificate."
-echo 
+echo
 echo "------------------------------------------------------------"
 echo
 EOT
@@ -276,7 +276,7 @@ systemctl_if_exists enable streamer_select.service
 if [ "$OCTOPI_INCLUDE_MJPGSTREAMER" == "yes" ]
 then
   systemctl_if_exists enable webcamd.service
-### use legacy camera stack on bullseye for now  
+### use legacy camera stack on bullseye for now
   if grep "camera_auto_detect=1" /boot/config.txt
     then
         sed -i "s/camera_auto_detect=1/camera_auto_detect=0/g" /boot/config.txt
@@ -304,7 +304,7 @@ apt-get -y install avrdude
 apt-get clean
 apt-get autoremove -y
 
-if [ -n "$OCTOPI_APTMIRROR" ]; 
+if [ -n "$OCTOPI_APTMIRROR" ];
 then
     echo "Reverting /etc/apt/sources.list"
     mv /etc/apt/sources.list.backup /etc/apt/sources.list
