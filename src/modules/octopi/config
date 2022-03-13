@@ -11,7 +11,7 @@
 [ -n "$OCTOPI_INCLUDE_CURAENGINE" ] || OCTOPI_INCLUDE_CURAENGINE=no
 
 # mjpg streamer
-[ -n "$OCTOPI_MJPGSTREAMER_ARCHIVE" ] || OCTOPI_MJPGSTREAMER_ARCHIVE=https://github.com/jacksonliam/mjpg-streamer/archive/master.zip
+[ -n "$OCTOPI_MJPGSTREAMER_ARCHIVE" ] || OCTOPI_MJPGSTREAMER_ARCHIVE=https://github.com/markus-k/mjpg-streamer/archive/refs/heads/raspicam-awb.zip
 [ -n "$OCTOPI_INCLUDE_MJPGSTREAMER" ] || OCTOPI_INCLUDE_MJPGSTREAMER=yes
 
 # FFMPEG HLS
